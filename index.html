@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HealthCare Plus | Modern Clinic & Healthcare Services</title>
+  <meta name="description" content="HealthCare Plus is a modern clinic with experienced doctors, advanced diagnostics and 24/7 emergency support. Book your appointment online." />
+  <meta name="theme-color" content="#0F766E" />
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#0F766E', dark: '#0B5C56', deep: '#083D39', tint: '#E7F5F3' },
+            secondary: { DEFAULT: '#0EA5E9', tint: '#EAF6FD' },
+            ink: '#0F172A',
+            soft: '#F8FAFC'
+          },
+          fontFamily: {
+            sans: ['Figtree', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Fraunces', 'Georgia', 'serif']
+          },
+          boxShadow: {
+            card: '0 1px 2px rgba(15,23,42,.04), 0 8px 24px -10px rgba(15,23,42,.12)',
+            lift: '0 2px 4px rgba(15,23,42,.05), 0 22px 44px -14px rgba(15,23,42,.22)'
+          }
+        }
+      }
+    };
+  </script>
+
+  
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body class="bg-white font-sans text-ink antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-white">Skip to main content</a>
+
+ 
+  <header id="site-header" class="site-header sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <div class="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="#home" class="flex items-center gap-3" aria-label="HealthCare Plus home">
+        <span class="grid h-10 w-10 place-items-center rounded-lg bg-primary text-lg text-white">
+          <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+        </span>
+        <span class="font-display text-xl font-semibold tracking-tight text-ink">HealthCare <span class="text-primary">Plus</span></span>
+      </a>
+
+      <nav class="hidden lg:block" aria-label="Primary">
+        <ul class="flex items-center gap-1">
+          <li><a data-nav href="#home" class="rounded-md px-3.5 py-2 text-[15px] font-medium text-slate-700 transition hover:text-primary">Home</a></li>
+          <li><a data-nav href="#about" class="rounded-md px-3.5 py-2 text-[15px] font-medium text-slate-700 transition hover:text-primary">About</a></li>
+          <li><a data-nav href="#services" class="rounded-md px-3.5 py-2 text-[15px] font-medium text-slate-700 transition hover:text-primary">Services</a></li>
+          <li><a data-nav href="#doctors" class="rounded-md px-3.5 py-2 text-[15px] font-medium text-slate-700 transition hover:text-primary">Doctors</a></li>
+          <li><a data-nav href="#blog" class="rounded-md px-3.5 py-2 text-[15px] font-medium text-slate-700 transition hover:text-primary">Blog</a></li>
+          <li><a data-nav href="#contact" class="rounded-md px-3.5 py-2 text-[15px] font-medium text-slate-700 transition hover:text-primary">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#appointment" class="hidden items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-[15px] font-semibold text-white shadow-sm transition hover:bg-primary-dark sm:inline-flex">
+          <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment
+        </a>
+        <button id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"
+          class="grid h-11 w-11 place-items-center rounded-lg border border-slate-200 text-ink transition hover:border-primary hover:text-primary lg:hidden">
+          <i id="icon-open" class="fa-solid fa-bars text-lg" aria-hidden="true"></i>
+          <i id="icon-close" class="fa-solid fa-xmark hidden text-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+
+    <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white lg:hidden">
+      <nav class="mx-auto max-w-7xl px-4 py-4 sm:px-6" aria-label="Mobile">
+        <ul class="grid gap-1">
+          <li><a data-nav href="#home" class="block rounded-lg px-4 py-3 text-base font-medium text-slate-700 hover:bg-primary-tint hover:text-primary">Home</a></li>
+          <li><a data-nav href="#about" class="block rounded-lg px-4 py-3 text-base font-medium text-slate-700 hover:bg-primary-tint hover:text-primary">About</a></li>
+          <li><a data-nav href="#services" class="block rounded-lg px-4 py-3 text-base font-medium text-slate-700 hover:bg-primary-tint hover:text-primary">Services</a></li>
+          <li><a data-nav href="#doctors" class="block rounded-lg px-4 py-3 text-base font-medium text-slate-700 hover:bg-primary-tint hover:text-primary">Doctors</a></li>
+          <li><a data-nav href="#blog" class="block rounded-lg px-4 py-3 text-base font-medium text-slate-700 hover:bg-primary-tint hover:text-primary">Blog</a></li>
+          <li><a data-nav href="#contact" class="block rounded-lg px-4 py-3 text-base font-medium text-slate-700 hover:bg-primary-tint hover:text-primary">Contact</a></li>
+        </ul>
+        <a href="#appointment" class="mt-3 flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3.5 text-base font-semibold text-white transition hover:bg-primary-dark">
+          <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    
+    <section id="home" class="relative overflow-x-clip bg-soft pb-24 pt-12 sm:pt-16 lg:pb-32 lg:pt-20">
+      <!-- soft panel behind the image (desktop) -->
+      <div class="absolute inset-y-0 right-0 hidden w-[44%] bg-primary-tint lg:block" aria-hidden="true"></div>
+
+      <div class="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-12 lg:gap-8 lg:px-8">
+        <div class="lg:col-span-6">
+          <h1 class="font-display text-[2.6rem] font-semibold leading-[1.08] tracking-tight text-ink sm:text-6xl">
+            Your Health, Our Priority
+          </h1>
+          <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
+            HealthCare Plus brings together experienced doctors, modern diagnostics and a care team that listens, so you get clear answers and a treatment plan that fits your life.
+          </p>
+
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="#appointment" class="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-7 py-4 text-base font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-card">
+              Book an Appointment
+            </a>
+            <a href="#services" class="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-7 py-4 text-base font-semibold text-ink transition hover:border-primary hover:text-primary">
+              Explore Services
+            </a>
+          </div>
+
+          <ul class="mt-9 grid gap-3 text-[15px] text-slate-700 sm:grid-cols-2">
+            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-primary" aria-hidden="true"></i> Same-week appointments</li>
+            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-primary" aria-hidden="true"></i> Clear, upfront pricing</li>
+            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-primary" aria-hidden="true"></i> Digital health records</li>
+            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-primary" aria-hidden="true"></i> Open daily, emergency 24/7</li>
+          </ul>
+        </div>
+
+        <div class="relative mx-auto w-full max-w-lg lg:col-span-6 lg:max-w-none lg:pl-12">
+          <div class="relative">
+            <div class="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl border-2 border-secondary/40" aria-hidden="true"></div>
+            <img
+              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80"
+              alt="Friendly doctor in a white coat with a stethoscope welcoming a patient"
+              width="1000" height="1100" fetchpriority="high"
+              class="relative aspect-[5/5.4] w-full rounded-2xl object-cover shadow-lift" />
+
+          
+            <div class="absolute left-3 top-6 flex items-center gap-3 rounded-xl border border-slate-100 bg-white p-3 pr-5 shadow-lift sm:-left-8">
+              <span class="grid h-11 w-11 place-items-center rounded-lg bg-primary-tint text-primary"><i class="fa-solid fa-headset" aria-hidden="true"></i></span>
+              <div>
+                <p class="text-sm font-semibold text-ink">24/7 Support</p>
+                <p class="text-xs text-slate-600">Always one call away</p>
+              </div>
+            </div>
+
+            <div class="absolute right-3 top-1/2 flex -translate-y-1/2 items-center gap-3 rounded-xl border border-slate-100 bg-white p-3 pr-5 shadow-lift sm:-right-6">
+              <span class="grid h-11 w-11 place-items-center rounded-lg bg-secondary-tint text-secondary"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></span>
+              <div>
+                <p class="text-sm font-semibold text-ink">Expert Doctors</p>
+                <p class="text-xs text-slate-600">50+ specialists</p>
+              </div>
+            </div>
+
+            <div class="absolute bottom-6 left-3 flex items-center gap-3 rounded-xl border border-slate-100 bg-white p-3 pr-5 shadow-lift sm:-left-8">
+              <span class="grid h-11 w-11 place-items-center rounded-lg bg-primary-tint text-primary"><i class="fa-solid fa-face-smile" aria-hidden="true"></i></span>
+              <div>
+                <p class="text-sm font-semibold text-ink">10K+ Happy Patients</p>
+                <p class="text-xs text-slate-600">Trusted by local families</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+    <section aria-label="HealthCare Plus at a glance" class="relative z-10 -mt-12 px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 shadow-lift">
+        <dl class="grid grid-cols-2 gap-px lg:grid-cols-4">
+          <div class="flex flex-col items-start gap-4 bg-white p-6 sm:flex-row sm:items-center sm:p-8">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-primary-tint text-xl text-primary"><i class="fa-solid fa-award" aria-hidden="true"></i></span>
+            <div>
+              <dt class="order-2 text-sm text-slate-600">Years Experience</dt>
+              <dd class="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">15+</dd>
+            </div>
+          </div>
+          <div class="flex flex-col items-start gap-4 bg-white p-6 sm:flex-row sm:items-center sm:p-8">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-primary-tint text-xl text-primary"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></span>
+            <div>
+              <dt class="order-2 text-sm text-slate-600">Expert Doctors</dt>
+              <dd class="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">50+</dd>
+            </div>
+          </div>
+          <div class="flex flex-col items-start gap-4 bg-white p-6 sm:flex-row sm:items-center sm:p-8">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-primary-tint text-xl text-primary"><i class="fa-solid fa-face-smile" aria-hidden="true"></i></span>
+            <div>
+              <dt class="order-2 text-sm text-slate-600">Happy Patients</dt>
+              <dd class="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">10K+</dd>
+            </div>
+          </div>
+          <div class="flex flex-col items-start gap-4 bg-white p-6 sm:flex-row sm:items-center sm:p-8">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-primary-tint text-xl text-primary"><i class="fa-solid fa-truck-medical" aria-hidden="true"></i></span>
+            <div>
+              <dt class="order-2 text-sm text-slate-600">Emergency Support</dt>
+              <dd class="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">24/7</dd>
+            </div>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+   
+    <section id="about" class="py-20 lg:py-28">
+      <div class="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:gap-20 lg:px-8">
+        <div class="relative">
+          <div class="absolute -bottom-4 -left-4 hidden h-2/3 w-2/3 rounded-2xl bg-primary-tint sm:block" aria-hidden="true"></div>
+          <img
+            src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=1000&q=80"
+            alt="Medical team discussing a patient's care plan in a bright clinic"
+            width="1000" height="800" loading="lazy"
+            class="relative aspect-[5/4] w-full rounded-2xl object-cover shadow-card" />
+        </div>
+
+        <div>
+          <h2 class="font-display text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">Compassionate Care, Better Health</h2>
+          <p class="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
+            For more than fifteen years, HealthCare Plus has helped families stay well and recover faster. We combine medical expertise with the time and attention every patient deserves.
+          </p>
+
+          <ul class="mt-9 space-y-6">
+            <li class="flex gap-4">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-primary-tint text-lg text-primary"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></span>
+              <div>
+                <h3 class="text-lg font-semibold">Experienced Professionals</h3>
+                <p class="mt-1 text-slate-600">Board-certified doctors and nurses with years of hands-on experience in every specialty we offer.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-primary-tint text-lg text-primary"><i class="fa-solid fa-microscope" aria-hidden="true"></i></span>
+              <div>
+                <h3 class="text-lg font-semibold">Advanced Technology</h3>
+                <p class="mt-1 text-slate-600">Digital imaging, in-house diagnostics and electronic records for faster, more accurate answers.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-primary-tint text-lg text-primary"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i></span>
+              <div>
+                <h3 class="text-lg font-semibold">Patient-Centered Care</h3>
+                <p class="mt-1 text-slate-600">Unhurried appointments and plain-language explanations, so you stay involved in every decision.</p>
+              </div>
+            </li>
+          </ul>
+
+          <a href="#why-us" class="mt-10 inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3.5 text-base font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-card">
+            Learn More <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+   
+    <section id="services" class="bg-soft py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl">Our Healthcare Services</h2>
+          <p class="mt-4 text-lg text-slate-600">From routine check-ups to specialist treatment, everything you need is under one roof.</p>
+        </div>
+
+        <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="group rounded-2xl border border-slate-200 bg-white p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-lift">
+            <span class="grid h-14 w-14 place-items-center rounded-xl bg-primary-tint text-2xl text-primary transition group-hover:bg-primary group-hover:text-white"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></span>
+            <h3 class="mt-6 text-xl font-semibold">General Consultation</h3>
+            <p class="mt-3 leading-relaxed text-slate-600">Check-ups, health screenings and ongoing care with a doctor who knows your history.</p>
+            <a href="#appointment" class="mt-6 inline-flex items-center gap-2 font-semibold text-primary transition hover:gap-3">Learn More <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="group rounded-2xl border border-slate-200 bg-white p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-lift">
+            <span class="grid h-14 w-14 place-items-center rounded-xl bg-primary-tint text-2xl text-primary transition group-hover:bg-primary group-hover:text-white"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></span>
+            <h3 class="mt-6 text-xl font-semibold">Cardiology</h3>
+            <p class="mt-3 leading-relaxed text-slate-600">Heart tests, blood pressure management and long-term plans to protect your heart health.</p>
+            <a href="#appointment" class="mt-6 inline-flex items-center gap-2 font-semibold text-primary transition hover:gap-3">Learn More <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="group rounded-2xl border border-slate-200 bg-white p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-lift">
+            <span class="grid h-14 w-14 place-items-center rounded-xl bg-primary-tint text-2xl text-primary transition group-hover:bg-primary group-hover:text-white"><i class="fa-solid fa-tooth" aria-hidden="true"></i></span>
+            <h3 class="mt-6 text-xl font-semibold">Dental Care</h3>
+            <p class="mt-3 leading-relaxed text-slate-600">Cleanings, fillings and cosmetic dentistry in a calm, comfortable setting.</p>
+            <a href="#appointment" class="mt-6 inline-flex items-center gap-2 font-semibold text-primary transition hover:gap-3">Learn More <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="group rounded-2xl border border-slate-200 bg-white p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-lift">
+            <span class="grid h-14 w-14 place-items-center rounded-xl bg-primary-tint text-2xl text-primary transition group-hover:bg-primary group-hover:text-white"><i class="fa-solid fa-baby" aria-hidden="true"></i></span>
+            <h3 class="mt-6 text-xl font-semibold">Pediatrics</h3>
+            <p class="mt-3 leading-relaxed text-slate-600">Gentle care for infants, children and teens, from vaccinations to growth checks.</p>
+            <a href="#appointment" class="mt-6 inline-flex items-center gap-2 font-semibold text-primary transition hover:gap-3">Learn More <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="group rounded-2xl border border-slate-200 bg-white p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-lift">
+            <span class="grid h-14 w-14 place-items-center rounded-xl bg-primary-tint text-2xl text-primary transition group-hover:bg-primary group-hover:text-white"><i class="fa-solid fa-droplet" aria-hidden="true"></i></span>
+            <h3 class="mt-6 text-xl font-semibold">Dermatology</h3>
+            <p class="mt-3 leading-relaxed text-slate-600">Diagnosis and treatment for skin, hair and nail concerns, medical and cosmetic.</p>
+            <a href="#appointment" class="mt-6 inline-flex items-center gap-2 font-semibold text-primary transition hover:gap-3">Learn More <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i></a>
+          </article>
+
+          <!-- Emphasised card: urgent care -->
+          <article class="group rounded-2xl border border-primary bg-primary p-7 text-white shadow-card transition duration-300 hover:-translate-y-1.5 hover:bg-primary-dark hover:shadow-lift">
+            <span class="grid h-14 w-14 place-items-center rounded-xl bg-white/15 text-2xl text-white"><i class="fa-solid fa-truck-medical" aria-hidden="true"></i></span>
+            <h3 class="mt-6 text-xl font-semibold">Emergency Care</h3>
+            <p class="mt-3 leading-relaxed text-white/85">Round-the-clock treatment for urgent injuries and sudden illness, with no appointment needed.</p>
+            <a href="#contact" class="mt-6 inline-flex items-center gap-2 font-semibold text-white transition hover:gap-3">Learn More <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== WHY CHOOSE US ============================== -->
+    <section id="why-us" class="bg-primary-deep py-20 text-white lg:py-28">
+      <div class="mx-auto grid max-w-7xl gap-14 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
+        <div class="lg:col-span-4">
+          <h2 class="font-display text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">Why Patients Choose HealthCare Plus</h2>
+          <p class="mt-5 text-lg leading-relaxed text-white/80">
+            Good medicine is only part of good care. We also focus on how easy, affordable and respectful every visit feels.
+          </p>
+          <a href="#appointment" class="mt-9 inline-flex items-center gap-2 rounded-lg bg-white px-7 py-3.5 text-base font-semibold text-primary-deep transition hover:-translate-y-0.5 hover:bg-primary-tint">
+            Book a Visit
+          </a>
+        </div>
+
+        <div class="lg:col-span-8">
+          <ul class="grid gap-x-12 gap-y-2 sm:grid-cols-2">
+            <li class="flex gap-5 border-t border-white/15 py-8">
+              <i class="fa-solid fa-user-doctor mt-1 w-7 shrink-0 text-2xl text-sky-300" aria-hidden="true"></i>
+              <div>
+                <h3 class="text-lg font-semibold">Qualified Doctors</h3>
+                <p class="mt-2 leading-relaxed text-white/75">Every specialist is board-certified and regularly trained in the latest medical practice.</p>
+              </div>
+            </li>
+            <li class="flex gap-5 border-t border-white/15 py-8">
+              <i class="fa-solid fa-microscope mt-1 w-7 shrink-0 text-2xl text-sky-300" aria-hidden="true"></i>
+              <div>
+                <h3 class="text-lg font-semibold">Modern Medical Equipment</h3>
+                <p class="mt-2 leading-relaxed text-white/75">On-site imaging and laboratory services mean quicker results and fewer referrals.</p>
+              </div>
+            </li>
+            <li class="flex gap-5 border-t border-white/15 py-8">
+              <i class="fa-solid fa-notes-medical mt-1 w-7 shrink-0 text-2xl text-sky-300" aria-hidden="true"></i>
+              <div>
+                <h3 class="text-lg font-semibold">Personalized Treatment</h3>
+                <p class="mt-2 leading-relaxed text-white/75">Care plans are built around your history, goals and lifestyle, never a one-size-fits-all script.</p>
+              </div>
+            </li>
+            <li class="flex gap-5 border-t border-white/15 py-8">
+              <i class="fa-solid fa-wallet mt-1 w-7 shrink-0 text-2xl text-sky-300" aria-hidden="true"></i>
+              <div>
+                <h3 class="text-lg font-semibold">Affordable Healthcare</h3>
+                <p class="mt-2 leading-relaxed text-white/75">Transparent pricing, flexible payment options and support with insurance paperwork.</p>
+              </div>
+            </li>
+            <li class="flex gap-5 border-t border-white/15 py-8">
+              <i class="fa-solid fa-calendar-check mt-1 w-7 shrink-0 text-2xl text-sky-300" aria-hidden="true"></i>
+              <div>
+                <h3 class="text-lg font-semibold">Easy Appointment Booking</h3>
+                <p class="mt-2 leading-relaxed text-white/75">Book online in under a minute and get a confirmation without waiting on hold.</p>
+              </div>
+            </li>
+            <li class="flex gap-5 border-t border-white/15 py-8">
+              <i class="fa-solid fa-headset mt-1 w-7 shrink-0 text-2xl text-sky-300" aria-hidden="true"></i>
+              <div>
+                <h3 class="text-lg font-semibold">24/7 Patient Support</h3>
+                <p class="mt-2 leading-relaxed text-white/75">A real person answers your questions day or night, including weekends and holidays.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+   
+    <section id="doctors" class="py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+          <div class="max-w-2xl">
+            <h2 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl">Meet Our Specialists</h2>
+            <p class="mt-4 text-lg text-slate-600">Experienced doctors who take the time to understand your health and explain your options.</p>
+          </div>
+          <a href="#appointment" class="inline-flex items-center gap-2 font-semibold text-primary transition hover:gap-3">Book with a specialist <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i></a>
+        </div>
+
+        <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+            <div class="overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&q=80" alt="Portrait of Dr. Amelia Hart, cardiologist" width="700" height="840" loading="lazy" class="aspect-[5/6] w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-semibold">Dr. Amelia Hart</h3>
+              <p class="mt-1 font-medium text-primary">Cardiologist</p>
+              <p class="mt-2 flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-briefcase-medical text-slate-400" aria-hidden="true"></i> 14 years experience</p>
+              <div class="mt-5 flex items-center gap-2">
+                <a href="#" aria-label="Dr. Amelia Hart on LinkedIn" class="grid h-9 w-9 place-items-center rounded-lg bg-soft text-slate-600 transition hover:bg-primary hover:text-white"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Dr. Amelia Hart on X" class="grid h-9 w-9 place-items-center rounded-lg bg-soft text-slate-600 transition hover:bg-primary hover:text-white"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Email Dr. Amelia Hart" class="grid h-9 w-9 place-items-center rounded-lg bg-soft text-slate-600 transition hover:bg-primary hover:text-white"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+              </div>
+              <a href="#appointment" class="mt-5 block rounded-lg border border-slate-300 py-2.5 text-center font-semibold text-ink transition hover:border-primary hover:bg-primary hover:text-white">View Profile</a>
+            </div>
+          </article>
+
+          <article class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+            <div class="overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=700&q=80" alt="Portrait of Dr. Daniel Reyes, general physician" width="700" height="840" loading="lazy" class="aspect-[5/6] w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-semibold">Dr. Daniel Reyes</h3>
+              <p class="mt-1 font-medium text-primary">General Physician</p>
+              <p class="mt-2 flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-briefcase-medical text-slate-400" aria-hidden="true"></i> 18 years experience</p>
+              <div class="mt-5 flex items-center gap-2">
+                <a href="#" aria-label="Dr. Daniel Reyes on LinkedIn" class="grid h-9 w-9 place-items-center rounded-lg bg-soft text-slate-600 transition hover:bg-primary hover:text-white"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Dr. Daniel Reyes on X" class="grid h-9 w-9 place-items-center rounded-lg bg-soft text-slate-600 transition hover:bg-primary hover:text-white"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Email Dr. Daniel Reyes" class="grid h-9 w-9 place-items-center rounded-lg bg-soft text-slate-600 transition hover:bg-primary hover:text-white"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+              </div>
+              <a href="#appointment" class="mt-5 block rounded-lg border border-slate-300 py-2.5 text-center font-semibold text-ink transition hover:border-primary hover:bg-primary hover:text-white">View Profile</a>
+            </div>
+          </article>
+
+          <article class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+            <div class="overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=700&q=80" alt="Portrait of Dr. Priya Nair, pediatrician" width="700" height="840" loading="lazy" class="aspect-[5/6] w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-semibold">Dr. Priya Nair</h3>
+              <p class="mt-1 font-medium text-primary">Pediatrician</p>
+              <p class="mt-2 flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-briefcase-medical text-slate-400" aria-hidden="true"></i> 12 years experience</p>
+              <div class="mt-5 flex items-center gap-2">
+                <a href="#" aria-label="Dr. Priya Nair on LinkedIn" class="grid h-9 w-9 place-items-center rounded-lg bg-soft text-slate-600 transition hover:bg-primary hover:text-white"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Dr. Priya Nair on X" class="grid h-9 w-9 place-items-center rounded-lg bg-soft text-slate-600 transition hover:bg-primary hover:text-white"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Email Dr. Priya Nair" class="grid h-9 w-9 place-items-center rounded-lg bg-soft text-slate-600 transition hover:bg-primary hover:text-white"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+              </div>
+              <a href="#appointment" class="mt-5 block rounded-lg border border-slate-300 py-2.5 text-center font-semibold text-ink transition hover:border-primary hover:bg-primary hover:text-white">View Profile</a>
+            </div>
+          </article>
+
+          <article class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+            <div class="overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=700&q=80" alt="Portrait of Dr. Marcus Chen, dermatologist" width="700" height="840" loading="lazy" class="aspect-[5/6] w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-semibold">Dr. Marcus Chen</h3>
+              <p class="mt-1 font-medium text-primary">Dermatologist</p>
+              <p class="mt-2 flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-briefcase-medical text-slate-400" aria-hidden="true"></i> 10 years experience</p>
+              <div class="mt-5 flex items-center gap-2">
+                <a href="#" aria-label="Dr. Marcus Chen on LinkedIn" class="grid h-9 w-9 place-items-center rounded-lg bg-soft text-slate-600 transition hover:bg-primary hover:text-white"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Dr. Marcus Chen on X" class="grid h-9 w-9 place-items-center rounded-lg bg-soft text-slate-600 transition hover:bg-primary hover:text-white"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Email Dr. Marcus Chen" class="grid h-9 w-9 place-items-center rounded-lg bg-soft text-slate-600 transition hover:bg-primary hover:text-white"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+              </div>
+              <a href="#appointment" class="mt-5 block rounded-lg border border-slate-300 py-2.5 text-center font-semibold text-ink transition hover:border-primary hover:bg-primary hover:text-white">View Profile</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  
+    <section id="appointment" class="bg-secondary-tint py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid overflow-hidden rounded-2xl bg-white shadow-lift lg:grid-cols-5">
+
+          <!-- Info panel -->
+          <div class="bg-primary p-8 text-white sm:p-10 lg:col-span-2 lg:p-12">
+            <h2 class="font-display text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">Book Your Appointment</h2>
+            <p class="mt-4 leading-relaxed text-white/85">Tell us what you need and we will confirm your visit within one business day.</p>
+
+            <ul class="mt-10 space-y-6">
+              <li class="flex gap-4">
+                <span class="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-white/15"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+                <div>
+                  <p class="text-sm text-white/75">Call us</p>
+                  <a href="tel:+15550102468" class="font-semibold hover:underline">+1 (555) 010-2468</a>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <span class="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-white/15"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+                <div>
+                  <p class="text-sm text-white/75">Email us</p>
+                  <a href="mailto:care@healthcareplus.example" class="font-semibold hover:underline">care@healthcareplus.example</a>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <span class="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-white/15"><i class="fa-regular fa-clock" aria-hidden="true"></i></span>
+                <div>
+                  <p class="text-sm text-white/75">Clinic hours</p>
+                  <p class="font-semibold">Mon to Sat, 8:00 AM to 8:00 PM</p>
+                  <p class="font-semibold">Sun, 9:00 AM to 4:00 PM</p>
+                  <p class="mt-1 text-sm text-white/75">Emergency care is open 24/7.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Form -->
+          <div class="p-8 sm:p-10 lg:col-span-3 lg:p-12">
+            <form id="appointment-form" class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="name" class="mb-2 block text-sm font-semibold text-ink">Full Name</label>
+                <input id="name" name="name" type="text" required autocomplete="name" placeholder="Jane Cooper"
+                  class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-base text-ink transition placeholder:text-slate-400 hover:border-slate-400 focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15" />
+              </div>
+              <div>
+                <label for="email" class="mb-2 block text-sm font-semibold text-ink">Email Address</label>
+                <input id="email" name="email" type="email" required autocomplete="email" placeholder="jane@example.com"
+                  class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-base text-ink transition placeholder:text-slate-400 hover:border-slate-400 focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15" />
+              </div>
+              <div>
+                <label for="phone" class="mb-2 block text-sm font-semibold text-ink">Phone Number</label>
+                <input id="phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+1 (555) 000-0000"
+                  class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-base text-ink transition placeholder:text-slate-400 hover:border-slate-400 focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15" />
+              </div>
+              <div>
+                <label for="date" class="mb-2 block text-sm font-semibold text-ink">Preferred Date</label>
+                <input id="date" name="date" type="date" required
+                  class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-base text-ink transition hover:border-slate-400 focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15" />
+              </div>
+              <div>
+                <label for="department" class="mb-2 block text-sm font-semibold text-ink">Department</label>
+                <select id="department" name="department" required
+                  class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-base text-ink transition hover:border-slate-400 focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15">
+                  <option value="" selected disabled>Select department</option>
+                  <option>General Consultation</option>
+                  <option>Cardiology</option>
+                  <option>Dental Care</option>
+                  <option>Pediatrics</option>
+                  <option>Dermatology</option>
+                </select>
+              </div>
+              <div>
+                <label for="doctor" class="mb-2 block text-sm font-semibold text-ink">Doctor</label>
+                <select id="doctor" name="doctor" required disabled
+                  class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-base text-ink transition hover:border-slate-400 focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400">
+                  <option value="" selected disabled>Choose a department first</option>
+                </select>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="message" class="mb-2 block text-sm font-semibold text-ink">Message <span class="font-normal text-slate-500">(optional)</span></label>
+                <textarea id="message" name="message" rows="4" placeholder="Briefly describe your symptoms or what you would like to discuss"
+                  class="w-full resize-y rounded-lg border border-slate-300 bg-white px-4 py-3 text-base text-ink transition placeholder:text-slate-400 hover:border-slate-400 focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15"></textarea>
+              </div>
+              <div class="sm:col-span-2">
+                <button type="submit" class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-7 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-primary-dark hover:shadow-card sm:w-auto">
+                  <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment
+                </button>
+                <p class="mt-3 text-sm text-slate-500">For medical emergencies, call our 24/7 line instead of using this form.</p>
+                <div id="form-status" role="status" aria-live="polite" class="mt-4 hidden rounded-lg border border-primary/30 bg-primary-tint px-4 py-3 text-sm font-medium text-primary-deep"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+    <section id="testimonials" class="py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl">What Our Patients Say</h2>
+          <p class="mt-4 text-lg text-slate-600">Real experiences from the people and families we care for.</p>
+        </div>
+
+        <div class="mt-14 grid gap-6 lg:grid-cols-3">
+          <figure class="flex flex-col rounded-2xl border border-slate-200 bg-soft p-8">
+            <div class="flex gap-1 text-amber-500" role="img" aria-label="Rated 5 out of 5 stars">
+              <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+            <blockquote class="mt-5 flex-1 text-lg leading-relaxed text-slate-700">
+              “Dr. Hart explained every test result in plain language and never made me feel rushed. I left with a clear plan and real peace of mind.”
+            </blockquote>
+            <figcaption class="mt-8 flex items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&h=160&q=80" alt="Portrait of Sarah Mitchell" width="56" height="56" loading="lazy" class="h-14 w-14 rounded-full object-cover" />
+              <div>
+                <p class="font-semibold">Sarah Mitchell</p>
+                <p class="text-sm text-slate-600">Cardiology patient</p>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="flex flex-col rounded-2xl border border-slate-200 bg-soft p-8">
+            <div class="flex gap-1 text-amber-500" role="img" aria-label="Rated 5 out of 5 stars">
+              <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+            <blockquote class="mt-5 flex-1 text-lg leading-relaxed text-slate-700">
+              “Booking took a minute, and I was seen on time. The whole clinic is spotless and the staff genuinely care. Easily the best experience I have had.”
+            </blockquote>
+            <figcaption class="mt-8 flex items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&h=160&q=80" alt="Portrait of James Okoye" width="56" height="56" loading="lazy" class="h-14 w-14 rounded-full object-cover" />
+              <div>
+                <p class="font-semibold">James Okoye</p>
+                <p class="text-sm text-slate-600">General consultation</p>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="flex flex-col rounded-2xl border border-slate-200 bg-soft p-8">
+            <div class="flex gap-1 text-amber-500" role="img" aria-label="Rated 5 out of 5 stars">
+              <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+            <blockquote class="mt-5 flex-1 text-lg leading-relaxed text-slate-700">
+              “My daughter is usually nervous at appointments, but Dr. Nair made her laugh within minutes. We now bring both of our kids here.”
+            </blockquote>
+            <figcaption class="mt-8 flex items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=160&h=160&q=80" alt="Portrait of Elena Torres" width="56" height="56" loading="lazy" class="h-14 w-14 rounded-full object-cover" />
+              <div>
+                <p class="font-semibold">Elena Torres</p>
+                <p class="text-sm text-slate-600">Parent, pediatrics</p>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+   
+    <section id="blog" class="bg-soft py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+          <div class="max-w-2xl">
+            <h2 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl">Health &amp; Wellness Insights</h2>
+            <p class="mt-4 text-lg text-slate-600">Practical advice from our doctors to help you and your family stay well.</p>
+          </div>
+          <a href="#blog" class="inline-flex items-center gap-2 font-semibold text-primary transition hover:gap-3">View all articles <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i></a>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+            <div class="overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=80" alt="Colorful bowl of fresh, heart-healthy foods" width="900" height="600" loading="lazy" class="aspect-[3/2] w-full object-cover transition duration-500 group-hover:scale-105" />
+            </div>
+            <div class="flex flex-1 flex-col p-7">
+              <div class="flex items-center gap-3 text-sm">
+                <span class="rounded-md bg-primary-tint px-2.5 py-1 font-semibold text-primary">Heart Health</span>
+                <time datetime="2026-09-24" class="text-slate-500">Sep 24, 2026</time>
+              </div>
+              <h3 class="mt-4 font-display text-xl font-semibold leading-snug">Five everyday habits that support a healthy heart</h3>
+              <p class="mt-3 flex-1 leading-relaxed text-slate-600">Small, consistent changes to food, movement and sleep can lower your risk more than you might expect.</p>
+              <a href="#blog" class="mt-6 inline-flex items-center gap-2 font-semibold text-primary transition hover:gap-3">Read More <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i></a>
+            </div>
+          </article>
+
+          <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+            <div class="overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=80" alt="Young child smiling while playing outdoors" width="900" height="600" loading="lazy" class="aspect-[3/2] w-full object-cover transition duration-500 group-hover:scale-105" />
+            </div>
+            <div class="flex flex-1 flex-col p-7">
+              <div class="flex items-center gap-3 text-sm">
+                <span class="rounded-md bg-secondary-tint px-2.5 py-1 font-semibold text-sky-700">Pediatrics</span>
+                <time datetime="2026-09-12" class="text-slate-500">Sep 12, 2026</time>
+              </div>
+              <h3 class="mt-4 font-display text-xl font-semibold leading-snug">How much sleep do children really need?</h3>
+              <p class="mt-3 flex-1 leading-relaxed text-slate-600">A pediatrician explains healthy sleep ranges by age and how to build a bedtime routine that sticks.</p>
+              <a href="#blog" class="mt-6 inline-flex items-center gap-2 font-semibold text-primary transition hover:gap-3">Read More <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i></a>
+            </div>
+          </article>
+
+          <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lift md:col-span-2 lg:col-span-1">
+            <div class="overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=80" alt="Skincare products arranged on a clean surface" width="900" height="600" loading="lazy" class="aspect-[3/2] w-full object-cover transition duration-500 group-hover:scale-105 md:aspect-[3/1] lg:aspect-[3/2]" />
+            </div>
+            <div class="flex flex-1 flex-col p-7">
+              <div class="flex items-center gap-3 text-sm">
+                <span class="rounded-md bg-primary-tint px-2.5 py-1 font-semibold text-primary">Dermatology</span>
+                <time datetime="2026-08-30" class="text-slate-500">Aug 30, 2026</time>
+              </div>
+              <h3 class="mt-4 font-display text-xl font-semibold leading-snug">Skin care basics for changing seasons</h3>
+              <p class="mt-3 flex-1 leading-relaxed text-slate-600">Simple adjustments to cleansing, moisture and sun protection as the weather shifts through the year.</p>
+              <a href="#blog" class="mt-6 inline-flex items-center gap-2 font-semibold text-primary transition hover:gap-3">Read More <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="bg-primary py-20 text-white lg:py-24" aria-labelledby="cta-title">
+      <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 id="cta-title" class="font-display text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">Take the First Step Toward Better Health</h2>
+        <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-white/85">Book an appointment with our experienced healthcare professionals today.</p>
+        <a href="#appointment" class="mt-9 inline-flex items-center justify-center gap-2 rounded-lg bg-white px-8 py-4 text-base font-semibold text-primary-deep shadow-sm transition hover:-translate-y-0.5 hover:bg-primary-tint hover:shadow-card">
+          <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment
+        </a>
+      </div>
+    </section>
+  </main>
+
+ 
+  <footer id="contact" class="bg-ink text-slate-300">
+    <div class="mx-auto max-w-7xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
+      <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-12">
+        <div class="lg:col-span-4">
+          <a href="#home" class="flex items-center gap-3" aria-label="HealthCare Plus home">
+            <span class="grid h-10 w-10 place-items-center rounded-lg bg-primary text-lg text-white"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></span>
+            <span class="font-display text-xl font-semibold text-white">HealthCare Plus</span>
+          </a>
+          <p class="mt-5 max-w-sm leading-relaxed text-slate-400">A modern clinic offering trusted, compassionate care for every member of your family, backed by experienced doctors and 24/7 support.</p>
+          <div class="mt-6 flex gap-3">
+            <a href="#" aria-label="HealthCare Plus on Facebook" class="grid h-10 w-10 place-items-center rounded-lg bg-white/10 text-white transition hover:bg-primary"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="HealthCare Plus on X" class="grid h-10 w-10 place-items-center rounded-lg bg-white/10 text-white transition hover:bg-primary"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="#" aria-label="HealthCare Plus on Instagram" class="grid h-10 w-10 place-items-center rounded-lg bg-white/10 text-white transition hover:bg-primary"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="HealthCare Plus on LinkedIn" class="grid h-10 w-10 place-items-center rounded-lg bg-white/10 text-white transition hover:bg-primary"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <nav class="lg:col-span-2" aria-label="Quick links">
+          <h3 class="text-base font-semibold text-white">Quick Links</h3>
+          <ul class="mt-5 space-y-3">
+            <li><a href="#home" class="transition hover:text-white">Home</a></li>
+            <li><a href="#about" class="transition hover:text-white">About</a></li>
+            <li><a href="#services" class="transition hover:text-white">Services</a></li>
+            <li><a href="#doctors" class="transition hover:text-white">Doctors</a></li>
+            <li><a href="#blog" class="transition hover:text-white">Blog</a></li>
+          </ul>
+        </nav>
+
+        <nav class="lg:col-span-2" aria-label="Services">
+          <h3 class="text-base font-semibold text-white">Services</h3>
+          <ul class="mt-5 space-y-3">
+            <li><a href="#services" class="transition hover:text-white">General Consultation</a></li>
+            <li><a href="#services" class="transition hover:text-white">Cardiology</a></li>
+            <li><a href="#services" class="transition hover:text-white">Dental Care</a></li>
+            <li><a href="#services" class="transition hover:text-white">Pediatrics</a></li>
+            <li><a href="#services" class="transition hover:text-white">Emergency Care</a></li>
+          </ul>
+        </nav>
+
+        <div class="sm:col-span-2 lg:col-span-4">
+          <h3 class="text-base font-semibold text-white">Contact Information</h3>
+          <ul class="mt-5 space-y-4">
+            <li class="flex gap-3"><i class="fa-solid fa-phone mt-1 w-4 text-sky-400" aria-hidden="true"></i><a href="tel:+15550102468" class="transition hover:text-white">+1 (555) 010-2468</a></li>
+            <li class="flex gap-3"><i class="fa-solid fa-envelope mt-1 w-4 text-sky-400" aria-hidden="true"></i><a href="mailto:care@healthcareplus.example" class="transition hover:text-white">care@healthcareplus.example</a></li>
+            <li class="flex gap-3"><i class="fa-solid fa-location-dot mt-1 w-4 text-sky-400" aria-hidden="true"></i><address class="not-italic">120 Wellness Avenue, Suite 400<br />Springfield, 12345</address></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-slate-400 sm:flex-row">
+        <p>&copy; <span id="year">2026</span> HealthCare Plus. All rights reserved.</p>
+        <ul class="flex gap-6">
+          <li><a href="#" class="transition hover:text-white">Privacy Policy</a></li>
+          <li><a href="#" class="transition hover:text-white">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+/* ==========================================================================
+   HealthCare Plus - custom styles
+   Tailwind handles layout and components; this file only holds the few
+   things utilities can't express cleanly.
+   ========================================================================== */
+
+/* Smooth scrolling (disabled for people who prefer reduced motion) */
+html {
+  scroll-padding-top: 5.5rem; /* keeps section headings clear of the sticky header */
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Headings use the display serif with its optical sizing switched on */
+.font-display {
+  font-optical-sizing: auto;
+}
+
+/* Keyboard focus ring (low specificity so Tailwind classes can override it) */
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #0f766e;
+  color: #ffffff;
+}
+
+/* Header: subtle shadow once the page has scrolled */
+.site-header {
+  transition: box-shadow 0.2s ease;
+}
+.site-header.is-scrolled {
+  box-shadow: 0 8px 24px -16px rgba(15, 23, 42, 0.25);
+}
+
+/* Active navigation link (set by script.js while scrolling) */
+[data-nav][aria-current="true"] {
+  color: #0f766e;
+  background-color: #e7f5f3;
+}
+
+/* Stats: render the label (dt) below the number (dd) while keeping
+   the semantically correct dt -> dd source order */
+dl > div > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Respect reduced-motion preferences everywhere */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
